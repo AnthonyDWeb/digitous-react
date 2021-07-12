@@ -3,7 +3,7 @@ import Steps from "./components/Steps";
 
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import "./styles/global.css"
 
 const tempMin = -20;
 const tempMax = 40;
