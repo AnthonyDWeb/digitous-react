@@ -1,6 +1,9 @@
 import React from "react";
+import Steps from "./components/Steps";
+
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
+
 
 const tempMin = -20;
 const tempMax = 40;
@@ -15,9 +18,10 @@ class App extends React.Component {
     
       <div className="container-fluid">
         <div className="row">
-          <p>{heartMin}</p>
-          <p>{tempMin}</p>
-          <p>{stepsMin}</p>
+          <p>Heart: {heartMin}</p>
+          <p>Temp: {tempMin}</p>
+          <p>Stepst: {stepsMin}</p>
+          <Steps />
         </div>
       </div>
     );
