@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './component/Counter';
 
 import './App.css';
 
@@ -13,30 +14,35 @@ class App extends React.Component {
       count: 0
     }
   }
+  addCounter = () => {
+    let newState = {
+      ...this.state,
+      count: this.state.count +1
+    }
+    this.setState(newState)
+  }
+
+  substractCounter = () => {
+    let newState = {
+      ...this.state,
+      count: this.state.count - 1
+    }
+    this.setState(newState)
+  }
 
   render() {
-
+    
     return (
       <div>
-        <h1>Counter</h1>
-        <h2>{this.state.count}</h2>
-        <button onClick={() =>{
+        <Counter count={this.state.count} addCounter={this.addCounter} substractCounter={this.substractCounter}
+         />
+        {/* <Button text="+" onClick={() => {
           let newState = {
             ...this.state,
-            count :  this.state.count -1
+            count: this.state.count + 1
           }
           this.setState(newState)
-          
-        }}>-</button>
-
-        <button onClick={() =>{
-          let newState = {
-            ...this.state,
-            count :  this.state.count +1
-          }
-          this.setState(newState)
-            
-        }}>+</button>
+        }}/> */}
       </div>
     )
   }
