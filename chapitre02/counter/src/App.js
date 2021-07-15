@@ -17,67 +17,43 @@ class App extends React.Component {
 
 
   addCounter = () => {
-    let newState = {
-      ...this.state,
-      count: this.state.count + 1
+    let count = this.state.count + 1
+    if (count <= this.state.count2 && this.state.count<99) {
+      this.setState({ count })
+      if (count === this.state.count2) {
+
+        this.addCounter2()
+      }
     }
-    if (newState.count === this.state.count2) {
-      this.addCounter2()
-    }
-    this.setState(newState)
   }
 
   substractCounter = () => {
     if (this.state.count > 0) {
-      let newState = {
-        ...this.state,
-        count: this.state.count - 1
-      }
-      this.setState(newState)
+      let count = this.state.count - 1
+      this.setState({ count })
     } else {
       this.state.count = 0;
     }
-
   }
 
 
 
   addCounter2 = () => {
-    let newState2 = {
-      ...this.state,
-      count2: this.state.count2 + 1
+    if (this.state.count2 < 100) {
+      let count2 = this.state.count2 + 1
+      this.setState({ count2 })
     }
-    this.setState(newState2)
   }
 
   substractCounter2 = () => {
-
-    if (this.state.count2 === this.state.count + 1) {
-
-      if (this.state.count > 0) {
-        let newState2 = {
-          ...this.state,
-          count2: this.state.count2 - 1
-        }
-        this.setState(newState2)
+    if (this.state.count2 > 0) {
+      let count2 = this.state.count2 - 1
+      this.setState({ count2 })
+      if (count2 === this.state.count) {
         this.substractCounter()
-
-      } else {
-
-        this.state.count2 = 0;
       }
     } else {
-
-      if (this.state.count > 0) {
-        let newState2 = {
-          ...this.state,
-          count2: this.state.count2 - 1
-        }
-        this.setState(newState2)
-
-      } else {
-        this.state.count2 = 0;
-      }
+      this.state.count2 = 0;
     }
   }
 
