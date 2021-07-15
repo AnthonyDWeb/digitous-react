@@ -5,13 +5,15 @@ class Counter extends React.Component {
   render() {
 
     return (
-      <div>
-        <h1>Counter</h1>
-        <h2> {this.props.count}</h2>
+      <div className="btnContainer"> 
+      <div className="titleContainer">
+        <h1 className="title" >Counter : </h1> 
+        <h2 className="valueCounter"> {this.props.count}</h2>
+      </div>
 
-        <button onClick={this.props.substractCounter}> - </button>
+        <button className="btnCounter" style={{background : "red"}} onClick={this.props.substractCounter}> - </button>
 
-        <button onClick={this.props.addCounter}>+</button>
+        <button className="btnCounter" style={{background : "green"}} onClick={this.props.addCounter}>+</button>
       </div>
 
     )
