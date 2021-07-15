@@ -19,9 +19,9 @@ class App extends React.Component {
   addCounter = () => {
     let count = this.state.count + 1
     if (count <= this.state.count2 && this.state.count<99) {
-      this.setState({ count })
+      this.setState((prevState) =>{ 
+        return {count: prevState.count +1} })
       if (count === this.state.count2) {
-
         this.addCounter2()
       }
     }
@@ -29,8 +29,9 @@ class App extends React.Component {
 
   substractCounter = () => {
     if (this.state.count > 0) {
-      let count = this.state.count - 1
-      this.setState({ count })
+      this.setState((prevState) =>{ 
+        return {count: prevState.count -1} })
+      
     } else {
       this.state.count = 0;
     }
@@ -40,15 +41,16 @@ class App extends React.Component {
 
   addCounter2 = () => {
     if (this.state.count2 < 100) {
-      let count2 = this.state.count2 + 1
-      this.setState({ count2 })
+      this.setState((prevState) =>{ 
+        return {count2: prevState.count2 +1} })
     }
   }
 
   substractCounter2 = () => {
     if (this.state.count2 > 0) {
       let count2 = this.state.count2 - 1
-      this.setState({ count2 })
+      this.setState((prevState) =>{ 
+        return {count2: prevState.count2 -1} })
       if (count2 === this.state.count) {
         this.substractCounter()
       }
