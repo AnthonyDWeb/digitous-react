@@ -27,43 +27,37 @@ class App extends React.Component {
 
   onHeartChange = (e) => {
     this.setState({ heart: e.target.value })
+    this.calculateWater(this.state.value,e.target.value, this.state.steps)
   }
 
   onStepsChange = (e) => {
     this.setState({ steps: e.target.value })
+    this.calculateWater(this.state.temperature,this.state.heart, e.target.value)
   }
 
   onTemperatureChange = (e) => {
     this.setState({ temperature: e.target.value })
-    this.calculateWater(e)
+    this.calculateWater(e.target.value,this.state.heart, this.state.steps)
   }
 
-  calculateWater = (e) => {
+  calculateWater = (temperature,heart,steps) => {
 
-
-    console.log('state temperature value: ' + this.state.temperature)
-    console.log('target value: ' + e.target.value)
-
-    if ((e.target.value - 20) >= 0 && this.state.temperature < e.target.value) {
-
-      console.log("condition rempli")
-
-      this.setState(() => {
-        return {
-          water: this.state.water + ((e.target.value - 20) * 0.02)
-        }
-      })
-
-    } else if ((e.target.value - 20) >= 0 && this.state.temperature > e.target.value) {
-      this.setState((prevState) => {
-        return {
-          water: prevState.water - ((e.target.value - 20) * 0.02)
-        }
-      })
-      console.log("condition non rempli")
+    // console.log('state temperature value: ' + this.state.temperature)
+    // console.log('target value: ' + e.target.value)
+    let myWater = 1.5;
+    if (temperature >= 20) {
+      myWater = myWater + ((temperature - 20) * 0.02) 
     }
-
+    if (steps >= 10000) {
+      myWater = myWater + ((steps - 10000) * 0.00002) 
+    }
+    if (heart >= 120) {
+      myWater = myWater + ((heart - 120) * 0.008) 
+    }
+    
+    this.setState( { water: myWater })
   }
+
 
   render() {
 
