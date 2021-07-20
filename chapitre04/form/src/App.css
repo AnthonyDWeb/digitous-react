@@ -1,0 +1,24 @@
+.container{
+  padding: 5%;
+  align-items: center;
+  border: solid 1px black;
+}
+.container label{
+  margin: 10px;
+}
+.container small{
+  margin-left: 10px;
+}
+
+.container input{
+margin-left: 10px;
+}
+.btn{
+margin: 10px;
+}
+
+.title{
+  font-size: 5rem;
+  text-align: center;
+  margin: 3%;
+}
