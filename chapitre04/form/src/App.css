@@ -1,24 +1,50 @@
-.container{
-  padding: 5%;
-  align-items: center;
-  border: solid 1px black;
-}
-.container label{
-  margin: 10px;
-}
-.container small{
-  margin-left: 10px;
-}
-
-.container input{
-margin-left: 10px;
-}
-.btn{
-margin: 10px;
+.bg{
+  height: 721px;
+  background: linear-gradient(to top left,#000066, #66ffff, #ff0000,  #66ffff, #000066);
 }
 
 .title{
   font-size: 5rem;
+  text-shadow: rgb(241, 0, 0) 5px 5px 5px;
   text-align: center;
-  margin: 3%;
+  padding: 20px;
+}
+.form-title{
+  font-size: 5rem;
+  text-shadow: rgb(4, 237, 245) 2px 2px 2px;
+
+  text-align: center;
+  padding: 20px;
+}
+.container{
+  padding: 5%;
+  align-items: center;
+  border: solid 1px black;
+  border-right: solid 3px black;
+  border-bottom: solid 3px black;
+  background-color: whitesmoke;
+}
+.form-container{
+  padding: 5%;
+  margin: 5%;
+  align-items: center;
+  border: solid 1px black;
+  border-right: solid 3px black;
+  border-bottom: solid 3px black;
+  background-color: rgb(219, 210, 210);
+}
+.form-group{
+  margin: 20px;
+}
+.form-check{
+  margin-left: 20px;
+}
+
+.container input{
+  background-color: rgb(226, 211, 211);
+  border: solid 2px;
+}
+
+.btn{
+margin: 20px;
 }
