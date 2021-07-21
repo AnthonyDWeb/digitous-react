@@ -10,17 +10,34 @@ class App extends React.Component{
     constructor(){
         super();
 
-        this.State ={
-            activeTab: "Add",
+        this.state ={
+            activeTab: "",
             items: []
         }
     }
+
+    renderActiveTab(){
+        if (this.state.activeTab === "Add") {
+            return <Add />
+        } else if (this.state.activeTab === "List") {
+            return <List />
+        } else {
+            return <Pay />
+        }
+    }
+
     render(){
-        return <div>
-          <Button isSelected={this.State.activeTab}> Add </Button>
-          <Button isSelected={this.State.activeTab}> List </Button>
-          <Button isSelected={this.State.activeTab}> Pay </Button>
-        </div>
+        return (
+                <div>
+                        <div className="div-btn">
+                                <Button isSelected={this.state.activeTab === "Add" ? true : false}  > Add </Button>
+                                <Button isSelected={this.state.activeTab === "List" ? true : false} > List </Button>
+                                <Button isSelected={this.state.activeTab === "Pay" ? true : false} > Pay </Button>
+                        </div>
+
+                        {this.renderActiveTab()}
+                </div>
+        )
     }
 }
 
