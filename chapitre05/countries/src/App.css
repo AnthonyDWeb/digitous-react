@@ -1,0 +1,37 @@
+
+.main{
+  margin: 10% 10% 10% 25%;
+  height: 400px;
+  width: 600px;
+  border: black solid 2px;
+  background-color: cadetblue;
+  align-items: center;
+  text-align: center;
+}
+
+.main-title{
+  font-size: 2rem;
+}
+
+.btn-country{
+  height: 30px;
+  width: 60px;
+  margin: 10px;
+  color: beige;
+  border-radius: 5px;
+  border: solid 1.5px black;
+  box-shadow: black 0 0 3px;
+  background: rgb(21, 21, 219);
+}
+
+.flag-img{
+  height: 10rem;
+  width: 15rem;
+  margin: 20px;
+}
+
+.card-info{
+  font: bolder;
+  font-size: 1.5rem;
+  margin: 10px;
+}
