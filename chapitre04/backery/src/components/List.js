@@ -1,9 +1,14 @@
+//------------------------Library------------------------------------
 import React from 'react'
 
 
 class List extends React.Component{
     render(){
-        return <div>List</div>
+        return (
+        <ul>
+            <li>{this.props.name} {this.props.price}€</li>
+        </ul>
+        )
     }
 }
 

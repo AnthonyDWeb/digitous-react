@@ -1,3 +1,38 @@
+.main-div{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.main-title{
+font-size: 3rem;
+}
+
 .div-btn{
     display:flex;
+    justify-content: center;
+}
+
+.inputApp{
+    width: 225px;
+    margin: 10px;
+
+}
+
+.btn-app{
+    border: rgb(228, 4, 4) 3px solid;
+    border-radius: 5px;
+    background-color: rgb(2, 233, 250);
+    margin: 20px;
+}
+.btn-add{
+    margin-left: 180px;
+}
+
+.container{
+    margin-left: 600px;
+    text-align: left;
+}
+.imgCard{
+    height: 100px;
+    width: 100px;
 }
