@@ -37,8 +37,6 @@ class App extends React.Component {
     }
   }
 
-
-
   addCounter2 = () => {
     if (this.state.count2 < 100) {
       this.setState((prevState) =>{ 
