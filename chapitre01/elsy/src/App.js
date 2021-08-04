@@ -26,36 +26,52 @@ class App extends React.Component {
   }
 
   onHeartChange = (e) => {
-    this.setState({ heart: e.target.value })
-    this.calculateWater(this.state.value,e.target.value, this.state.steps)
+    this.setState((prevState) =>{ 
+      return {
+        ...prevState,
+        heart: e.target.value 
+      }
+    });
+    this.calculateWater(this.state.value,e.target.value, this.state.steps);
   }
-
+  
   onStepsChange = (e) => {
-    this.setState({ steps: e.target.value })
-    this.calculateWater(this.state.temperature,this.state.heart, e.target.value)
+    this.setState((prevState) =>{ 
+      return {
+        ...prevState,
+        steps: e.target.value 
+      }
+    });
+    this.calculateWater(this.state.temperature,this.state.heart, e.target.value);
   }
 
   onTemperatureChange = (e) => {
-    this.setState({ temperature: e.target.value })
+  this.setState((prevState) =>{ 
+    return {
+      ...prevState,
+      temperature: e.target.value 
+    }
+  });
     this.calculateWater(e.target.value,this.state.heart, this.state.steps)
   }
 
   calculateWater = (temperature,heart,steps) => {
-
-    // console.log('state temperature value: ' + this.state.temperature)
-    // console.log('target value: ' + e.target.value)
-    let myWater = 1.5;
-    if (temperature >= 20) {
-      myWater = myWater + ((temperature - 20) * 0.02) 
-    }
-    if (steps >= 10000) {
-      myWater = myWater + ((steps - 10000) * 0.00002) 
-    }
-    if (heart >= 120) {
-      myWater = myWater + ((heart - 120) * 0.008) 
-    }
-    
-    this.setState( { water: myWater })
+      let myWater = 1.5;
+      if (temperature >= 20) {
+        myWater = myWater + ((temperature - 20) * 0.02) 
+      };
+      if (steps >= 10000) {
+        myWater = myWater + ((steps - 10000) * 0.00002) 
+      };
+      if (heart >= 120) {
+        myWater = myWater + ((heart - 120) * 0.008) 
+      };
+      this.setState((prevState) =>{ 
+        return {
+          ...prevState,
+          water: myWater 
+        }
+      });
   }
 
 
