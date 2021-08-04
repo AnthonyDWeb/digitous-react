@@ -5,16 +5,15 @@ import UserInfo from './components/UserInfo';
 
 class App extends React.Component{
 
-  // userList =() => {
-  //   // Json.map( (item)=> <p>Name: {item.name} , E-mail: {item.email} , Website: {item.website}</p> )
-  //   {name:Json.name , email:Json.email, website:Json.website}
-  // }
+  userList =() => {
+   return Json.map( (user)=>  (<UserInfo name={user.name} email={user.email} />	) )
+    // {name:Json.name , email:Json.email, website:Json.website}
+  }
   render() {
     return(
 			<div>
-				{/* {Json.map((user) => (
-					<UserInfo name={user.name} email={user.email} />
-				))} */}
+				{/* {Json.map((user) => (<UserInfo name={user.name} email={user.email} />	))} */}
+        {this.userList()}
 			</div>
     )
   }
