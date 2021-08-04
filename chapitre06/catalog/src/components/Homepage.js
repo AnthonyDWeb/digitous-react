@@ -10,9 +10,6 @@ class Homepage extends React.Component{
         {movies.map(movie => <div>
                     <img src={movie.image} alt="image" />
                     <p>Title: {movie.title} </p>
-                    <p>Director: {movie.director} </p>
-                    <p>Actors: {movie.stars} </p>
-                    <p>Description: {movie.description} </p>
                 </div>)}
     </div>
   }
