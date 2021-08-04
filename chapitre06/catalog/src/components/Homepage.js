@@ -8,7 +8,7 @@ class Homepage extends React.Component{
   render(){
     return <div>
         {movies.map(movie => <div>
-                    <img src={movie.image} alt="image" />
+                    {/* <img src={movie.image} alt="image" /> */}
                     <p>Title: <Link to={`/${movie.id}`}>{movie.title}</Link></p>
                 </div>)}
     </div>

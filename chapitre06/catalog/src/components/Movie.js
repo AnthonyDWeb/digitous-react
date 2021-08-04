@@ -7,7 +7,6 @@ class Movie extends React.Component{
 
     render(){
         let movieData = movies.filter(movie => movie.id === parseInt(this.props.match.params.id))
-        console.log('movie' , movieData)
         let myMovie = movieData.map(myMovie => <div >
                 <img src={myMovie.image} alt="image" />
                 <p>Title: {myMovie.title} </p>
