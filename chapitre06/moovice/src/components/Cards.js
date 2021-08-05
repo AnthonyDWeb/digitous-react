@@ -1,10 +1,11 @@
 import React from 'react'
 
-
+let favorite = [];
 class Cards extends React.Component{
 
     stockId = (id) => {
-        localStorage.setItem("favorite",JSON.stringify(id))
+        favorite.push(id);
+        localStorage.setItem('Favorite', JSON.stringify(favorite))
 }
 
     render(){

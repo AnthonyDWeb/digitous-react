@@ -5,12 +5,13 @@
 
 .mainContainer{
   padding-bottom: 2rem;
-  /* margin: 0 3rem; */
+  margin: 0 3rem;
 }
 
 .mainContainer-information{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .separator{
@@ -19,9 +20,6 @@
 }
 
 .btn-previous{
-  position: absolute;
-  top: 33.5rem;
-  right: 85rem;
   height: 25rem;
   width: 5.5rem;
   border-radius: 5px;
@@ -29,14 +27,11 @@
   padding-bottom: 0.2rem;
   background-color: paleturquoise;
 }
-.btn-next{
-  position: absolute;
-  top: 33.5rem;
-  left: 85rem;
+.btn-next{ 
   height: 25rem;
   width: 5.5rem;
   border-radius: 5px;
-  margin: 2rem;
+  margin: 0rem 2rem;
   padding-bottom: 0.2rem;
   background-color: paleturquoise;
 }

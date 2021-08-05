@@ -16,11 +16,6 @@ class PopularBattle extends React.Component{
         this.getMovies()
     }
 
-    componentDidUpdate(){
-        console.log('test 0', this.state.movies[this.state.currentBattle]);
-        console.log('test 2', this.state.movies[this.state.currentBattle +1].id);
-    }
-
     getMovies = () => {
         fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=ffe8fb6083dd9df3c48769e65f74d600")
         .then(response => response.json())
@@ -35,11 +30,19 @@ class PopularBattle extends React.Component{
     }
 
     getNextMovies = () => {
-        this.setState({currentBattle: this.state.currentBattle +2})
+        if(this.state.currentBattle <18){
+            this.setState({currentBattle: this.state.currentBattle +2})
+        } else {
+            this.setState({currentBattle: 0})
+        }
     }
 
     getPreviousMovies = () => {
+        if(this.state.currentBattle > 0){
         this.setState({currentBattle: this.state.currentBattle -2})
+        } else {
+            this.setState({currentBattle: 18})
+        }
     }
 
 
