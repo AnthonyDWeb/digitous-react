@@ -1,13 +1,53 @@
 #root{
+  min-height: 45.1rem;
   background-color: darkslategray;
 }
 
 .mainContainer{
   padding-bottom: 2rem;
+  /* margin: 0 3rem; */
 }
-.container{
+
+.mainContainer-information{
   display: flex;
-  padding: 2rem 0;
+  justify-content: center;
+}
+
+.separator{
+  color: whitesmoke;
+  text-align: center;
+}
+
+.btn-previous{
+  position: absolute;
+  top: 33.5rem;
+  right: 85rem;
+  height: 25rem;
+  width: 5.5rem;
+  border-radius: 5px;
+  margin: 2rem;
+  padding-bottom: 0.2rem;
+  background-color: paleturquoise;
+}
+.btn-next{
+  position: absolute;
+  top: 33.5rem;
+  left: 85rem;
+  height: 25rem;
+  width: 5.5rem;
+  border-radius: 5px;
+  margin: 2rem;
+  padding-bottom: 0.2rem;
+  background-color: paleturquoise;
+}
+
+.movies-information{
+  width: 70%;
+}
+
+.subcontainer{
+  display: flex;
+  padding: 2rem 2rem;
   margin: 2rem 0;
   border: solid 2px black;
   background-color: rgb(184, 180, 180);
@@ -19,10 +59,10 @@
   margin: 2rem 0;
 }
 
-.information{
+.subcontainer-information{
   margin: 1rem;
 }
-.information span{
+.subcontainer-information span{
   font-weight: 650;
   margin-right: 0.5rem;
   text-decoration: underline;

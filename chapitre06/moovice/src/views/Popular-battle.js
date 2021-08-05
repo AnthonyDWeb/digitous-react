@@ -29,10 +29,29 @@ class PopularBattle extends React.Component{
         })
     }
 
+    getNextMovies = () => {
+        this.setState({currentBattle: this.state.currentBattle +2})
+    }
+
+    getPreviousMovies = () => {
+        this.setState({currentBattle: this.state.currentBattle -2})
+    }
+
     render(){
-        return (<div>
-                    <h1>Popular Battle</h1>
-                    {this.state.movies.map((myMovie, index) => <Cards key={index} movieImg={myMovie.poster_path} /> )}
+        return (<div className="mainContainer">
+                    <h1 className="mainTitle">Popular Battle</h1>
+                    <div className="mainContainer-information">
+                        <button onClick={this.getPreviousMovies} className="btn-previous"> previous </button>
+                        <div className="movies-information">
+                            {this.state.movies.slice(this.state.currentBattle,this.state.currentBattle +2).map((myMovie, index) => <div> 
+                                <Cards key={index} movieImg={myMovie.poster_path} />
+                                <p className="separator">
+                                    _____________________________________________________________________________________________________________
+                                </p> 
+                            </div> )}
+                        </div>
+                        <button onClick={this.getNextMovies} className="btn-next">Next</button>
+                    </div>
             </div>)
     }
 }
