@@ -32,7 +32,9 @@ class Popular extends React.Component{
         return (
             <div className="mainContainer">
                 <h1 className="mainTitle">Popular</h1>
-                {this.state.movies.map((myMovie, index) => <Cards key={index} movieImg={myMovie.poster_path} title={myMovie.title} date={myMovie.release_date} description={myMovie.overview} /> )}
+                <div className="mainContainer-information">
+                    {this.state.movies.map((myMovie, index) => <Cards key={index} movieImg={myMovie.poster_path} title={myMovie.title} date={myMovie.release_date} description={myMovie.overview} /> )}
+                </div>
             </div>)
     }
 }

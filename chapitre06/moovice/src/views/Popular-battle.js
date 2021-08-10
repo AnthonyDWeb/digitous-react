@@ -1,7 +1,7 @@
 import React from 'react'
 import Cards from '../components/Cards';
 
-
+let favorite = [];
 class PopularBattle extends React.Component{
     constructor(){
         super();
@@ -29,37 +29,39 @@ class PopularBattle extends React.Component{
         })
     }
 
-    getNextMovies = () => {
+
+    
+    getNextMovies = (id) => {
+        if (favorite.indexOf(id) === -1){
+            favorite.push(id) ;
+            localStorage.setItem('Favorite', JSON.stringify(favorite))
+            alert("add in Favorite")
+        }
+
         if(this.state.currentBattle <18){
             this.setState({currentBattle: this.state.currentBattle +2})
         } else {
             this.setState({currentBattle: 0})
         }
+        
     }
 
-    getPreviousMovies = () => {
-        if(this.state.currentBattle > 0){
-        this.setState({currentBattle: this.state.currentBattle -2})
-        } else {
-            this.setState({currentBattle: 18})
-        }
-    }
-
+ 
 
     render(){
         return (<div className="mainContainer">
                     <h1 className="mainTitle">Popular Battle</h1>
                     <div className="mainContainer-information">
-                        <button onClick={this.getPreviousMovies} className="btn-previous"> previous </button>
-                        <div className="movies-information">
+                        {/* <button onClick={this.getPreviousMovies} className="btn-previous"> previous </button> */}
+                        {/* <div className="movies-information"> */}
                             {this.state.movies.slice(this.state.currentBattle,this.state.currentBattle +2).map((myMovie, index) => <div> 
-                                <Cards key={index} favorite={myMovie.id} movieImg={myMovie.poster_path} title={myMovie.title} date={myMovie.release_date} description={myMovie.overview} />
-                                <p className="separator">
+                                <Cards key={index} favorite={myMovie.id} movieImg={myMovie.poster_path} title={myMovie.title} date={myMovie.release_date} description={myMovie.overview} nextMovie={this.getNextMovies} />
+                                {/* <p className="separator">
                                     _____________________________________________________________________________________________________________
-                                </p> 
+                                </p>  */}
                             </div> )}
-                        </div>
-                        <button onClick={this.getNextMovies} className="btn-next">Next</button>
+                        {/* </div> */}
+                        {/* <button onClick={this.getNextMovies} className="btn-next">Next</button> */}
                     </div>
             </div>)
     }

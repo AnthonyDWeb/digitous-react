@@ -1,23 +1,28 @@
+*{
+  color: whitesmoke;
+}
 #root{
   min-height: 45.1rem;
   background-color: darkslategray;
 }
 
 .mainContainer{
+  /* display: flex; */
   padding-bottom: 2rem;
   margin: 0 3rem;
 }
 
 .mainContainer-information{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* align-items: center; */
 }
 
-.separator{
+/* .separator{
   color: whitesmoke;
   text-align: center;
-}
+} */
 
 .btn-previous{
   height: 25rem;
@@ -36,16 +41,21 @@
   background-color: paleturquoise;
 }
 
-.movies-information{
+/* .movies-information{
   width: 70%;
-}
+} */
 
 .subcontainer{
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   padding: 2rem 2rem;
   margin: 2rem 0;
-  border: solid 2px black;
-  background-color: rgb(184, 180, 180);
+  height: 700px;
+  width: 400px;
+
+  
 }
 
 .mainTitle{
@@ -55,10 +65,20 @@
 }
 
 .subcontainer-information{
-  margin: 1rem;
+  text-align: center;
 }
 .subcontainer-information span{
   font-weight: 650;
+  margin-left: 0.5rem;
   margin-right: 0.5rem;
   text-decoration: underline;
+}
+.subcontainer2-information span{
+  font-weight: 650;
+  margin-right: 0.5rem;
+  text-decoration: underline;
+}
+.img-movie{
+  height: 300px;
+  /* width: 133.32px; */
 }

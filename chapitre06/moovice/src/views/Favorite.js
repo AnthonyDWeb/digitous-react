@@ -1,8 +1,10 @@
 import React from 'react'
+import Cards from '../components/Cards';
+
 
 class Favorite extends React.Component{
     
-    getStorage = () => localStorage.getItem('Favorite');
+    getStorage = () => JSON.parse(localStorage.getItem('Favorite'));
     
 
     constructor(){
@@ -16,7 +18,11 @@ class Favorite extends React.Component{
 
     componentDidMount(){
         console.log('fav ->' ,this.state.favIDs);
-        this.state.favIDs.forEach(id => this.getMovie(id));
+        this.favMovies()
+    }
+
+    favMovies = () =>{
+        return ( this.state.favIDs === null ? null : this.state.favIDs.forEach(this.state.favIDs === null ? null : id => this.getMovie(id) ) )
     }
 
     getMovie = (id) => {
@@ -26,17 +32,21 @@ class Favorite extends React.Component{
             this.setState(prevState => {
                 return {
                     ...prevState,
-                    movies: myResult
+                    movies:  [...prevState.movies, {...myResult}] 
                 }
             })
         })
     }
 
     render(){
+        console.log("movies ->", this.state.movies)
         return <div>
             <h1 className="mainTitle">Favorite</h1>
-            {this.state.movies}
+            <div className="mainContainer-information">
+                {this.state.favIDs === null ? null :
+                this.state.movies.map((myMovie, index) => <Cards key={index} movieImg={myMovie.poster_path} title={myMovie.title} date={myMovie.release_date} description={myMovie.overview} /> )}
             </div>
+        </div>
     }
 }
 
